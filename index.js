@@ -28,7 +28,7 @@ const start = () => {
 start()*/
 
 
-const { select, input, checkbox } = require('@inquirer/prompts')
+const { select, input, checkbox, filter } = require('@inquirer/prompts')
 
 let meta = {
     value: "Ler um livro por mês",
@@ -66,7 +66,7 @@ const listarMetas = async () => {
         console.log("Nenhuma meta selecionada")
         return
     }
-    
+
     metas.forEach((m) => {
         m.checked = false
     })
@@ -80,6 +80,23 @@ const listarMetas = async () => {
     })
 
     console.log('Meta(s) concluída(s)')
+}
+
+const metasRealizadas = async () => {
+
+    const realizadas = metas.filter((meta) => {
+        return meta.checked
+    })
+
+    if(realizadas.length == 0) {
+        console.log('Não existe metas realizadas')
+        return
+    }
+
+    await select ({
+        message: "metas realizadas" + realizadas.length,
+        choices: [...realizadas]
+    })
 }
 
 const start = async() => {
@@ -101,6 +118,11 @@ const start = async() => {
 
                 },
                 {
+                    name: "Metas realizadas",
+                    value: "realizadas"
+
+                },
+                {
 
                     name: "Sair",
                     value: "sair"
@@ -116,6 +138,9 @@ const start = async() => {
                 break
             case "listar":
                 await listarMetas()  
+                break
+            case "realizadas":
+                await metasRealizadas()
                 break
             case "sair":
                 console.log("Até a próxima!")
