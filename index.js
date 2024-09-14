@@ -29,8 +29,8 @@ start()*/
 
 const start = () => {
 
-    let opcao = "sair"
     while(true) {
+        let opcao = "sair"
         switch(opcao) {
             case "cadastrar":
                 console.log("Vamos cadastrar?")
