@@ -13,7 +13,7 @@ let metas = [
 ]
 
 console.log(metas[0].value)
-console.log(metas[1].value)*/
+console.log(metas[1].value)
 
 
 const start = () => {
@@ -21,6 +21,27 @@ const start = () => {
     while(count < 10) {
         console.log(count)
         count++
+    }
+
+}
+
+start()*/
+
+const start = () => {
+
+    let opcao = "sair"
+    while(true) {
+        switch(opcao) {
+            case "cadastrar":
+                console.log("Vamos cadastrar?")
+                break
+            case "listar":
+                console.log("Vamos listar?")
+                break
+            case "sair":
+                return
+
+        }
     }
 
 }
