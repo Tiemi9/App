@@ -5,3 +5,4 @@
 - marcar/desmarcar metas
 - remover metas
 - sistema de mensagem
+- sistema de carregar e salvar metas

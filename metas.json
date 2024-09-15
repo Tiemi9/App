@@ -1,0 +1,14 @@
+[
+  {
+    "value": "Tomar água",
+    "checked": true
+  },
+  {
+    "value": "parar de fumar",
+    "checked": true
+  },
+  {
+    "value": "pescar",
+    "checked": false
+  }
+]
